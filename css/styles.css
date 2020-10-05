@@ -6,6 +6,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -119,7 +120,6 @@ a:visited:hover {
 }
 
 #showcase li {
-    margin-left: 2rem;
     line-height: 2.5;
 }
 
