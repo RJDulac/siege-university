@@ -8,17 +8,8 @@ const tutorial = () => {
     "Opening An Example",
     "Basic Movement Controls Within SE",
   ];
-  const h2 = document.createElement("H2"),
-    introductionLink = document.createElement("A");
-
-  root.appendChild(h2);
-  root.appendChild(introductionLink);
-
-  h2.innerText = "The Basics of the Siege Editor";
-
-  introductionLink.href = "#";
-  introductionLink.innerText = "Introduction";
-
+  createSingleElement("The Basics of the Siege Editor", "H2");
+  createSingleLink("Introduction");
   createElementsFromArray(introductionSentences, root, "P");
 };
 
@@ -33,5 +24,18 @@ const createElementsFromArray = (arr, appendFrom, elementType) => {
       name.href = "#";
     }
   });
+};
+
+const createSingleLink = (text, appendFrom = root, reference = "#") => {
+  const link = document.createElement("A");
+  appendFrom.appendChild(link);
+  link.href = reference;
+  link.innerText = text;
+};
+
+const createSingleElement = (text, elementType, appendFrom = root) => {
+  const name = document.createElement(elementType);
+  appendFrom.appendChild(name);
+  name.innerText = text;
 };
 tutorial();
